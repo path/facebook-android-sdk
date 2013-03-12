@@ -238,7 +238,7 @@ public final class Util {
         // dialog in a WebView -- in which case the app crashes
         @SuppressWarnings("unused")
         CookieSyncManager cookieSyncMngr =
-            CookieSyncManager.createInstance(context);
+            CookieSyncManager.createInstance(context.getApplicationContext());
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.removeAllCookie();
     }

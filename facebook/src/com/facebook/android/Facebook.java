@@ -339,7 +339,8 @@ public class Facebook {
         if (permissions.length > 0) {
             params.putString("scope", TextUtils.join(",", permissions));
         }
-        CookieSyncManager.createInstance(activity);
+
+        CookieSyncManager.createInstance(activity.getApplicationContext());
         dialog(activity, LOGIN, params, new DialogListener() {
 
             public void onComplete(Bundle values) {
