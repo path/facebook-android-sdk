@@ -178,7 +178,12 @@ public class FbDialog extends Dialog {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             Util.logd("Facebook-WebView", "Webview loading URL: " + url);
             super.onPageStarted(view, url, favicon);
-            mSpinner.show();
+
+            // check if spinner context is still valid and the dialog is still showing
+            // before showing the spinner
+            if (mSpinner.getContext() != null && isShowing()) {
+                mSpinner.show();
+            }
         }
 
         @Override
