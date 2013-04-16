@@ -484,7 +484,7 @@ class AuthorizationClient implements Serializable {
                 // Ensure any cookies set by the dialog are saved
                 // This is to work around a bug where CookieManager may fail to instantiate if CookieSyncManager
                 // has never been created.
-                CookieSyncManager syncManager = CookieSyncManager.createInstance(context);
+                CookieSyncManager syncManager = CookieSyncManager.createInstance(context.getApplicationContext());
                 syncManager.sync();
                 saveCookieToken(token.getToken());
             } else {
