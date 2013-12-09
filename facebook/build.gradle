@@ -30,3 +30,23 @@ android {
         }
     }
 }
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            snapshotRepository(url: project.ext["pathMaven.repo.snapshots"]) {
+                authentication(userName: project.ext["pathMaven.username"], password: project.ext["pathMaven.password"]);
+            }
+
+            repository(url: project.ext["pathMaven.repo.releases"]) {
+                authentication(userName: project.ext["pathMaven.username"], password: project.ext["pathMaven.password"]);
+            }
+
+            pom.project {
+                groupId 'com.facebook.android'
+                artifactId 'library'
+                version '1.1'
+            }
+        }
+    }
+}
