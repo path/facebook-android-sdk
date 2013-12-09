@@ -9,7 +9,7 @@ buildscript {
 }
 
 apply plugin: 'android-library'
-
+apply plugin: 'maven'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar', exclude:'android-support-v4.jar')
