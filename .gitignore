@@ -17,3 +17,8 @@ facebook/tests/assets/config.json
 .idea/inspectionProfiles/
 build
 *.iml
+*com_crashlytics_local_strings.xml
+*com_crashlytics_export_strings.xml
+*crashlytics-build.properties
+.gradle/
+
